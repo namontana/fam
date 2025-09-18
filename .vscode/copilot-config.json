@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "fam": {
+      "command": "node",
+      "args": ["./workspaces/namontana-fam/build/index.js"],
+      "env": {}
+    },
+    "mnemosyne": {
+      "command": "node",
+      "args": ["./workspaces/namontana-fam/build/mnemosyne.js"],
+      "env": {}
+    }
+  }
+}
