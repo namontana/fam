@@ -32,4 +32,4 @@ yarn-error.log*
 /functions/node_modules/
 
 # Build artifacts
-/build/
+build/*

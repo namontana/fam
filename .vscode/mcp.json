@@ -1,0 +1,12 @@
+{
+	"servers": {
+		"fam0": {
+			"type": "stdio",
+			"command": "node",
+			"args": [
+				"./build/index.js"
+			]
+		}
+	},
+	"inputs": []
+}
