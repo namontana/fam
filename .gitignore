@@ -30,3 +30,6 @@ yarn-error.log*
 # Node modules
 /node_modules/
 /functions/node_modules/
+
+# Build artifacts
+/build/
