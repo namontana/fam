@@ -11,7 +11,9 @@
 				"GitHub.codespaces",
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
-				"GitHub.remotehub"
+				"GitHub.remotehub",
+				"dart-code.dart-code",
+				"dart-code.flutter"
 			]
 		}
 	}
