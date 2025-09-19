@@ -12,14 +12,16 @@
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
 				"GitHub.remotehub",
-				"dart-code.dart-code",
-				"dart-code.flutter"
+				"Dart-Code.flutter",
+				"Dart-Code.dart-code"
 			]
 		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
