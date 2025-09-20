@@ -1,0 +1,11 @@
+.env
+firebase_options.dart
+build/
+.dart_tool/
+.packages
+pubspec.lock
+.idea/
+.vs/
+*.iml
+*.log
+*.tmp
