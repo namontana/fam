@@ -265,7 +265,6 @@ jobs:
     needs: [create-release]
     environment:
       name: production
-      url: https://${{ secrets.FIREBASE_PROJECT_ID }}.web.app
     
     steps:
       - name: 📚 Checkout repository

@@ -170,7 +170,6 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     environment:
       name: staging
-      url: https://${{ secrets.FIREBASE_PROJECT_ID }}-staging.web.app
     
     steps:
       - name: 📚 Checkout repository
@@ -202,7 +201,6 @@ jobs:
         working-directory: ${{ env.WORKING_DIRECTORY }}
     environment:
       name: production
-      url: https://${{ secrets.FIREBASE_PROJECT_ID }}.web.app
     
     steps:
       - name: 📚 Checkout repository

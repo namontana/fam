@@ -84,7 +84,6 @@ jobs:
     if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
     environment:
       name: staging
-      url: https://${{ secrets.FIREBASE_PROJECT_ID }}-staging.web.app
     defaults:
       run:
         working-directory: ${{ env.WORKING_DIRECTORY }}
