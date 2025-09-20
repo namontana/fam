@@ -105,6 +105,6 @@ class GeminiService extends ChangeNotifier {
 
   // Get chat history
   List<Content> getChatHistory() {
-    return _chatSession?.history ?? [];
+    return _chatSession?.history?.toList() ?? [];
   }
 }

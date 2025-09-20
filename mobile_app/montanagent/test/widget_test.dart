@@ -11,20 +11,16 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:montanagent/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('MontaNAgent app smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const MontaNAgentApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that our app loads properly.
+    expect(find.text('MontaNAgent'), findsAtLeastOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Simple smoke test - verify app doesn't crash on startup
     await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    
+    // The test passes if no exceptions are thrown during app initialization
   });
 }
