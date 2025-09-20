@@ -39,7 +39,10 @@ class _ChatScreenState extends State<ChatScreen> {
     if (messageText.isEmpty) return;
 
     final geminiService = Provider.of<GeminiService>(context, listen: false);
-    final firestoreService = Provider.of<FirestoreService>(context, listen: false);
+    final firestoreService = Provider.of<FirestoreService>(
+      context,
+      listen: false,
+    );
 
     // Add user message
     final userMessage = ChatMessage(
@@ -66,7 +69,7 @@ class _ChatScreenState extends State<ChatScreen> {
     // Get AI response
     try {
       final response = await geminiService.sendMessage(messageText);
-      
+
       final aiMessage = ChatMessage(
         id: const Uuid().v4(),
         message: response,
@@ -106,8 +109,9 @@ class _ChatScreenState extends State<ChatScreen> {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       child: Row(
-        mainAxisAlignment:
-            message.isUser ? MainAxisAlignment.end : MainAxisAlignment.start,
+        mainAxisAlignment: message.isUser
+            ? MainAxisAlignment.end
+            : MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (!message.isUser) ...[
@@ -145,11 +149,7 @@ class _ChatScreenState extends State<ChatScreen> {
             CircleAvatar(
               radius: 16,
               backgroundColor: Colors.grey[400],
-              child: const Icon(
-                Icons.person,
-                size: 20,
-                color: Colors.white,
-              ),
+              child: const Icon(Icons.person, size: 20, color: Colors.white),
             ),
           ],
         ],
@@ -171,12 +171,18 @@ class _ChatScreenState extends State<ChatScreen> {
               setState(() {
                 _messages.clear();
               });
-              
+
               try {
-                final firestoreService = Provider.of<FirestoreService>(context, listen: false);
+                final firestoreService = Provider.of<FirestoreService>(
+                  context,
+                  listen: false,
+                );
                 await firestoreService.clearChatHistory();
-                
-                final geminiService = Provider.of<GeminiService>(context, listen: false);
+
+                final geminiService = Provider.of<GeminiService>(
+                  context,
+                  listen: false,
+                );
                 geminiService.resetChat();
               } catch (e) {
                 debugPrint('Error clearing chat: $e');
@@ -198,7 +204,10 @@ class _ChatScreenState extends State<ChatScreen> {
             ],
             onSelected: (value) async {
               if (value == 'logout') {
-                final authService = Provider.of<AuthService>(context, listen: false);
+                final authService = Provider.of<AuthService>(
+                  context,
+                  listen: false,
+                );
                 await authService.signOut();
               }
             },
@@ -222,16 +231,14 @@ class _ChatScreenState extends State<ChatScreen> {
                         const SizedBox(height: 16),
                         Text(
                           'Hello! I\'m MontaNAgent.',
-                          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                color: Colors.grey[600],
-                              ),
+                          style: Theme.of(context).textTheme.headlineSmall
+                              ?.copyWith(color: Colors.grey[600]),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           'How can I help you today?',
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                color: Colors.grey[600],
-                              ),
+                          style: Theme.of(context).textTheme.bodyLarge
+                              ?.copyWith(color: Colors.grey[600]),
                         ),
                       ],
                     ),
@@ -264,7 +271,10 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                       const SizedBox(width: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 12,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(18),

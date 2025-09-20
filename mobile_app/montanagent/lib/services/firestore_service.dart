@@ -72,10 +72,10 @@ class FirestoreService extends ChangeNotifier {
         .orderBy('timestamp', descending: false)
         .snapshots()
         .map((snapshot) {
-      return snapshot.docs.map((doc) {
-        return ChatMessage.fromMap(doc.data(), doc.id);
-      }).toList();
-    });
+          return snapshot.docs.map((doc) {
+            return ChatMessage.fromMap(doc.data(), doc.id);
+          }).toList();
+        });
   }
 
   // Clear chat history for the current user
@@ -108,10 +108,9 @@ class FirestoreService extends ChangeNotifier {
       final userId = _auth.currentUser?.uid;
       if (userId == null) return;
 
-      await _db
-          .collection('users')
-          .doc(userId)
-          .set({'preferences': preferences}, SetOptions(merge: true));
+      await _db.collection('users').doc(userId).set({
+        'preferences': preferences,
+      }, SetOptions(merge: true));
     } catch (e) {
       debugPrint('Error saving user preferences: $e');
       rethrow;

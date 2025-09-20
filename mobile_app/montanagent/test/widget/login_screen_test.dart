@@ -4,12 +4,10 @@ import 'package:montanagent/screens/auth/login_screen.dart';
 
 void main() {
   group('LoginScreen Widget Tests', () {
-    testWidgets('should display login form elements', (WidgetTester tester) async {
-      await tester.pumpWidget(
-        const MaterialApp(
-          home: LoginScreen(),
-        ),
-      );
+    testWidgets('should display login form elements', (
+      WidgetTester tester,
+    ) async {
+      await tester.pumpWidget(const MaterialApp(home: LoginScreen()));
 
       // Verify key elements are present
       expect(find.text('MontaNAgent'), findsOneWidget);

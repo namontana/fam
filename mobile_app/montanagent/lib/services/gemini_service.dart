@@ -29,10 +29,10 @@ class GeminiService extends ChangeNotifier {
           'information, encourage them to use the meeting search feature.',
         ),
       );
-      
+
       // Start a new chat session
       _chatSession = _model!.startChat();
-      
+
       notifyListeners();
     } catch (e) {
       debugPrint('Error initializing Gemini: $e');
@@ -50,18 +50,16 @@ class GeminiService extends ChangeNotifier {
     notifyListeners();
 
     try {
-      final response = await _chatSession!.sendMessage(
-        Content.text(message),
-      );
-      
+      final response = await _chatSession!.sendMessage(Content.text(message));
+
       _isLoading = false;
       notifyListeners();
-      
+
       return response.text ?? 'Sorry, I couldn\'t generate a response.';
     } catch (e) {
       _isLoading = false;
       notifyListeners();
-      
+
       debugPrint('Error sending message to Gemini: $e');
       return 'Sorry, there was an error processing your request. Please try again.';
     }
@@ -78,18 +76,16 @@ class GeminiService extends ChangeNotifier {
 
     try {
       final prompt = '$context\n\nUser: $message';
-      final response = await _model!.generateContent([
-        Content.text(prompt),
-      ]);
-      
+      final response = await _model!.generateContent([Content.text(prompt)]);
+
       _isLoading = false;
       notifyListeners();
-      
+
       return response.text ?? 'Sorry, I couldn\'t generate a response.';
     } catch (e) {
       _isLoading = false;
       notifyListeners();
-      
+
       debugPrint('Error sending message with context to Gemini: $e');
       return 'Sorry, there was an error processing your request. Please try again.';
     }

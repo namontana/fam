@@ -20,7 +20,7 @@ void main() {
 
     // Simple smoke test - verify app doesn't crash on startup
     await tester.pump();
-    
+
     // The test passes if no exceptions are thrown during app initialization
   });
 }

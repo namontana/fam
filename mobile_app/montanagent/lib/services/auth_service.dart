@@ -17,7 +17,9 @@ class AuthService extends ChangeNotifier {
 
   // Sign in with email and password
   Future<UserCredential?> signInWithEmailAndPassword(
-      String email, String password) async {
+    String email,
+    String password,
+  ) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
         email: email,
@@ -31,7 +33,9 @@ class AuthService extends ChangeNotifier {
 
   // Register with email and password
   Future<UserCredential?> registerWithEmailAndPassword(
-      String email, String password) async {
+    String email,
+    String password,
+  ) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
         email: email,

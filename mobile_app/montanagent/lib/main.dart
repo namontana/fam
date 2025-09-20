@@ -9,12 +9,10 @@ import 'routes/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialize Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MontaNAgentApp());
 }
 
@@ -40,7 +38,7 @@ class MontaNAgentApp extends StatelessWidget {
               geminiService.initialize(geminiApiKey);
             }
           }
-          
+
           return MaterialApp(
             title: 'MontaNAgent',
             theme: ThemeData(
@@ -49,10 +47,7 @@ class MontaNAgentApp extends StatelessWidget {
                 brightness: Brightness.light,
               ),
               useMaterial3: true,
-              appBarTheme: const AppBarTheme(
-                centerTitle: true,
-                elevation: 0,
-              ),
+              appBarTheme: const AppBarTheme(centerTitle: true, elevation: 0),
               elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF6C63FF),
