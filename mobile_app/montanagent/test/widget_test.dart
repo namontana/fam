@@ -5,7 +5,6 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:montanagent/main.dart';
@@ -16,7 +15,7 @@ void main() {
     await tester.pumpWidget(const MontaNAgentApp());
 
     // Verify that our app loads properly.
-    expect(find.text('MontaNAgent'), findsAtLeastOneWidget);
+    expect(find.text('MontaNAgent'), findsOneWidget);
 
     // Simple smoke test - verify app doesn't crash on startup
     await tester.pump();
