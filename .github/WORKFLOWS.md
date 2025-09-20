@@ -143,7 +143,7 @@ gh run view [run-id] --log
 Edit in workflow files:
 ```yaml
 env:
-  FLUTTER_VERSION: '3.24.3'  # Update this
+  FLUTTER_VERSION: '3.35.4'  # Update this
 ```
 
 ### Add New Environments

@@ -27,7 +27,7 @@ on:
         type: boolean
 
 env:
-  FLUTTER_VERSION: '3.24.3'
+  FLUTTER_VERSION: '3.35.4'
   WORKING_DIRECTORY: ./mobile_app/montanagent
 
 jobs:

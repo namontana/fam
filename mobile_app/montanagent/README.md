@@ -15,7 +15,7 @@ MontaNAgent is a Flutter application that provides an AI-powered chat interface 
 
 ## Prerequisites
 
-- Flutter SDK (3.19 or later)
+- Flutter SDK (3.22 or later)
 - Firebase project with the following services enabled:
   - Authentication (Email/Password and Anonymous)
   - Firestore Database

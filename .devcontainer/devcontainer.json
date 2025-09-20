@@ -16,7 +16,7 @@
 				"Dart-Code.dart-code"
 			]
 		}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
